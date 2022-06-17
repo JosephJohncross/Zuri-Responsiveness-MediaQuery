@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/syle.css" />
+  </head>
+  <body>
+    <div class="larger__container">
+      <section class="text__section">
+        <div class="slogan">Learn to code by <br />watching others</div>
+        <div class="slogan__details">
+          <p>
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
+      </section>
+      <section class="form__section">
+        <div class="trial__container">
+          <span class="trial">Try it free for 7 days</span> then $20/mo. thereafter
+        </div>
+        <div class="form__container">
+          <form action="">
+            <div class="f__name" style="position: relative;">
+              <input type="text" placeholder="First Name" required/>
+              <img src="/images/icon-error.svg" alt="">
+              <p>First Name cannot be empty</p>
+            </div>
+            <div class="l__name" style="position: relative;">
+              <input type="text" placeholder="Last Name" required/>
+              <img src="/images/icon-error.svg" alt="">
+              <p>Last Name cannot be empty</p>
+            </div>
+            <div class="email__address" style="position: relative;">
+              <input type="email" placeholder="Email Address " required/>
+              <img src="/images/icon-error.svg" alt="">
+              <p>Looks like this is not an email</p>
+            </div>
+            <div class="password" style="position: relative;">
+              <input type="password" placeholder="Password" required/>
+              <img src="/images/icon-error.svg" alt="">
+              <p>Password Cannot be empty</p>
+            </div>
+            <div class="claim__btn">
+              <button>Claim your free trial</button>
+            </div>
+            <div class="terms__statment">
+              <p>By clicking the button you are agreeing tour<span class="terms"> Terms and Services</span></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script>
+      const fname = document.querySelector('.f__name');
+      const lname = document.querySelector('.l__name');
+      const email = document.querySelector('.email__address');
+      const password = document.querySelector('.password');
+      const claimBtn = document.querySelector('button');
+      claimBtn.onclick = ()=>{
+        event.preventDefault()
+
+        validate(fname);
+        validate(lname);
+        validate(email);
+        validate(password);
+        
+      }
+      function validate(elem) {
+        if (!elem.value){
+          elem.firstElementChild.style.border = '1px solid hsl(0, 100%, 74%';
+          show(elem.lastElementChild);
+          show(elem.children[1]);
+        }
+        else{
+          hide(elem.lastElementChild);
+          hide(elem.children[1]);
+        }
+      }
+      function show(elem) {
+        elem.style.display = 'block';
+      }
+      function hide(elem){
+        elem.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

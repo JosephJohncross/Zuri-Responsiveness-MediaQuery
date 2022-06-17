@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --p-red: hsl(0, 100%, 74%) ;
+    --p-green: hsl(154, 59%, 51%);
+
+    --acc-blue: hsl(248, 32%, 49%);
+    --n-dark-blue:  hsl(249, 10%, 26%) ;
+    --n-gray-blue: hsl(246, 25%, 77%);
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.larger__container{
+    /* min-width: 100%; */
+    padding: 1rem;
+    background-image: url(/images/bg-intro-desktop.png);
+    background-color: var(--p-red);
+    /* min-height: 100%; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+}
+.text__section{
+    height: 100%;
+    color: #fff;
+    padding: 2rem;
+    padding-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+.slogan{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: .7rem;
+    word-spacing: .2rem;
+}
+.form__section{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2rem;
+    padding-right: 7rem;
+    justify-content: center;
+}
+.trial__container{
+    height: max-content;
+    width: 100%;
+    padding: .7rem;
+    background-color: var(--acc-blue);
+    color: #fff;
+    margin-bottom: 1.4rem;
+    border-radius: .4rem;
+    box-shadow: 0px 6px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.form__container{
+    width: 100%;
+    height: max-content;
+    border-radius: .4rem;
+    box-shadow: 0px 6px 1px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 1rem 1.4rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin: 1rem 0;
+}
+form p{
+    float: right;
+    font-size: .3rem;
+    font-style: italic;
+    color: var(--p-red);
+    display: none;
+}
+
+input{
+    width: 100%;
+    padding: .8rem 1.5rem;
+    margin: .3rem 0;
+    border-radius: .2rem;
+    border: 1px solid var(--n-gray-blue);
+    font-weight: 600;
+}
+input:active{
+    border: 1px solid var(--n-dark-blue);
+}
+button{
+    width: 100%;
+    padding: .8rem 1.5rem;
+    margin: .4rem 0;
+    border-radius: .4rem;
+    border: none;
+    background-color: var(--p-green);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: inset 0px -3px 1px  rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: hsl(154, 56%, 61%);
+}
+.terms__statment{
+    margin: .2rem 0 1.2rem;
+    font-size: .5px;
+    transform: scale(0.8);
+    /* word-break:break-all; */
+    width: 100%;
+}
+.terms__statment p{
+    font-style: normal;
+    color: grey;
+    display: block;
+    text-align: center;
+}
+.terms{
+    color: var(--p-red);
+    font-weight: bold;
+}
+.trial{
+    font-weight: 600;
+}
+img{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -100%);
+    display: none;
+}
+
+@media screen and (min-width: 1240px) {
+    .larger__container{
+        width: 1440px;
+    }
+}
+@media screen and (min-width: 800px ) and (max-width: 1240px) {
+    .larger__container{
+        height: 100%;
+        width: max-content;
+    }
+}
+@media screen and (max-width: 800px) {
+    body{
+        height: 100vh;
+        overflow: hidden;
+    }
+    .larger__container{
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        top: 0;
+        left: 0;
+        padding: 0;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    .form__section{
+        width: 90%;
+        padding: 0;
+        align-items: center;
+        height: max-content;
+    }
+    .text__section{
+        width: 90%;
+        padding: 0;
+        align-items: center;
+        height: max-content;
+        text-align: center;
+    }
+    .slogan{
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin-bottom: .7rem;
+        word-spacing: .2rem;
+    }
+}
